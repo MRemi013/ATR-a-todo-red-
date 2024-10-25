@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instalacion de Redes</title>
-    <link rel="stylesheet" href="/atr.html">
+    <title>Atencion al Cliente</title>
     <link rel="icon" href="./assets/imagenes/a toda red logo transparente.png" type="image/x-icon">
+
     <style>
         video {
             position: fixed;
@@ -65,7 +64,6 @@
         .textos{
             background-color:#00ccff65 ;
             color: antiquewhite;
-
             
             
         }
@@ -73,63 +71,78 @@
             display: flex;
             justify-content: center;
         }
-        
+        form{
+            color: antiquewhite;
+            display: block;
+           gap: 10px;
+        }
+        h1{
+            color: antiquewhite;
+        }
     </style>
-</head> 
-
-
+</head>
 <body>
-    <video src="./assets/imagenes/Red.mp4" autoplay="true" muted="true" loop="true" poster=""></video>
-    <div class="Container">
-
-
-        <section class="Instalacion de Redes">
-
-            <div id="Instalacion de Redes">
-                <div class="InstRedes">
-                    <div class="textos">
-
-                        <h1>Instalacion de Redes</h1>
-                        <p>Instalamos redes evaluando necesidades, diseñando soluciones personalizadas, montando
-                            infraestructura, configurando equipos y realizando pruebas. También brindamos capacitación y
-                            soporte para asegurar un funcionamiento óptimo, garantizando calidad y satisfacción. <br>En
-                            nuestra empresa ofrecemos soluciones de instalación de redes diseñadas para asegurar un
-                            rendimiento impecable desde el primer día. Nos enfocamos en brindar servicios integrales,
-                            adaptándonos a las necesidades específicas de cada proyecto, y garantizando calidad y
-                            satisfacción en cada etapa del proceso. <br> 🔌 Análisis de Necesidades:
-                            Identificamos los requerimientos técnicos y operativos para ofrecerte la infraestructura de
-                            red ideal, optimizada para el crecimiento y la estabilidad. <br>🛠️ Diseño Personalizado:
-                            Creamos un plan a medida para tu red, tomando en cuenta tus objetivos y presupuesto, con
-                            opciones escalables que se ajusten a cambios futuros. <br> 🏗️ Montaje e Infraestructura:
-                            Instalamos el cableado estructurado, routers, switches y equipos necesarios, asegurando una
-                            configuración precisa para evitar interrupciones y mejorar el rendimiento. <br> 🚀 Garantía
-                            de Calidad y Satisfacción:
-                            Nos comprometemos a ofrecer soluciones confiables, duraderas y seguras, asegurando la plena
-                            satisfacción de nuestros clientes. <br> 🔒 Seguridad de Redes:
-                            Hoy en día, la seguridad es primordial. Durante la instalación, implementamos protocolos de
-                            seguridad avanzados que incluyen firewalls, control de acceso, encriptación y segmentación
-                            de redes para proteger tus datos y garantizar un entorno seguro contra amenazas externas e
-                            internas. <br> 🎓 Capacitación para tu Equipo:
-                            Una red instalada correctamente debe ser bien administrada. Por eso, ofrecemos capacitación
-                            a tu personal para que sepan cómo gestionar y solucionar posibles inconvenientes menores,
-                            asegurando que tu equipo esté preparado para sacar el máximo provecho de la infraestructura.
-                            
-
-                        </p>
-                    </div>
-
-                    <div class="imagenesredes">
-
-                        <img src="./assets/Instalacion de redes/red1.jpeg" alt="red" height="400" width="400">
-                        <img src="./assets/Instalacion de redes/red2.jpeg" alt="red" height="400" width="400">
-                    </div>
-                </div>
-
-
+    <main>
+        <video src="./assets/imagenes/Red.mp4" autoplay="true" muted="true" loop="true" poster=""></video>
+         <h1>¡Contrate Nuestro Servicio!</h1>
+        <form action="">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email"name="CorreoElectronico" id="email" required>
             </div>
-        </section>
-    </div>
+            <div>
+                <label for="tel">Numero de Telefono</label>
+                <input type="tel" name="tel" id="tel" required>
+            </div>
+            <div>
+                <label for="DNI">DNI:</label>
+                <input type="number" name="DNI" id="DNI" max="" min="0" required>
+            </div>
+            <div>
+                <label for="Provincia">Provincia</label>
+                <select name="Provincia" required>
 
+                    <option value="BSAS">Buenos Aires</option>
+                    <option value="CABA">C.A.B.A</option>
+                    <option value="TM">Tucuman</option>
+                    <option value="Catamarca">Catamarca</option>
+                    <option value="Chaco">Chaco</option>
+                    <option value="Chubut">Chubut</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Corrientes">Corrientes</option>
+                    <option value="Entre Ríos">Entre Ríos</option>
+                    <option value="Formosa">Formosa</option>
+                    <option value="Jujuy">Jujuy</option>
+                    <option value="La Pampa">La Pampa</option>
+                    <option value="La Rioja">La Rioja</option>
+                    <option value="Mendoza">Mendoza</option>
+                    <option value="Misiones">Misiones</option>
+                    <option value="Neuquén">Neuquén</option>
+                    <option value="Río Negro">Río Negro</option>
+                    <option value="Salta">Salta</option>
+                    <option value="San Juan">San Juan</option>
+                    <option value="San Luis">San Luis</option>
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="Santa Fe">Santa Fe</option>
+                    <option value="Santiago del Estero">Santiago del Estero</option>
+                    <option value="Tierra del Fuego">Tierra del Fuego</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Enviar">
+            </div>
+
+
+        </form>
+        <form action="">
+            <h2>Opine de Nuestro servicio</h2>
+            <textarea name="opinion" id="opinion" cols="30" rows="10"></textarea>
+        </form>
+    </main>
     <footer>
         <div class="Container_Footer">
 
@@ -194,8 +207,6 @@
             </div>
         </div>
     </footer>
-
-
+    
 </body>
-
 </html>
