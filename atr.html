@@ -5,143 +5,309 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATR</title>
-    <link rel="stylesheet" href="/Estilo.css">
     <link rel="icon" href="./assets/imagenes/a toda red logo transparente.png" type="image/x-icon">
-   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2dfdf;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #33333300;
+            padding: 10px 20px;
+        }
+
+        .Logo img {
+            height: 100px;
+            /* Ajustado para mantener la proporción */
+            width: auto;
+        }
+
+        nav {
+            flex-grow: 1;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #8d878786;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        li:hover .submenu {
+            display: block;
+        }
+
+        main {
+            margin: 15px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            margin: 15px 0;
+        }
+
+        .X-Star {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .Routers {
+            width: 250px;
+            height: 250px;
+            animation: Router 15s ease-in-out infinite;
+        }
+
+        @keyframes Router {
+            0% {
+                transform: translateX(100vw);
+                /* Empieza fuera del contenedor, a la derecha */
+            }
+
+            100% {
+                transform: translateX(-100%);
+                /* Vuelve a aparecer desde la derecha */
+            }
+        }
+
+        .Router {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .B1 {
+            background-color: blueviolet;
+            color: white;
+        }
+
+        .B1:hover {
+            background-color: #7a2c91;
+        }
+
+        .B2 {
+            background-color: #666;
+            color: white;
+        }
+
+        .B2:hover {
+            background-color: #444;
+        }
+
+        video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 105%;
+            min-height: 100%;
+            transform: translateX(calc((100% - 100vw) / 2));
+            z-index: -1;
+        }
+
+        footer {
+            background-color: rgba(163, 162, 162, 0.5);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .Container_Logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .Nombres {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .Nombres li {
+            margin: 0 10px;
+        }
+
+        .P {
+            margin: 0;
+        }
+
+        .Routers {
+            animation: Router 15s ease-in-out infinite;
+        }
+
+        @keyframes Router {
+            0% {
+                transform: translateX(100vw);
+                /* Empieza fuera del contenedor, a la derecha */
+            }
+
+            100% {
+                transform: translateX(-1000%);
+                /* Vuelve a aparecer desde la derecha */
+            }
+        }
+
+        .Logo {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .ATR {
+            animation: Logo 3s ease-in-out forwards;
+        }
+
+        @keyframes Logo {
+            0% {
+                transform: translateX(100%) translateY(-100%) rotate(0deg);
+                /* Empieza en la esquina superior derecha */
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) rotate(0deg);
+                /* Movimiento hacia el centro sin rotación */
+            }
+
+
+
+
+        }
+    </style>
 </head>
 
 <body>
-    <header id="Menu">
-       
+    <header>
         <div class="Logo">
-
-            <img src="./assets/imagenes/a toda red logo (1)v.png" alt="Logo" height="300" width="350">
+            <img class="ATR" src="./assets/imagenes/a toda red logo (1)v.png" alt="Logo">
         </div>
-        <div id="header">
-
-            <div class="menu">
-                <ul class="nav">
-                <li><a href="">Menu</a></li>
-                <li><a href="">Servicios</a>
-                    <ul>
-                        <li><a href="./instRedes.html" target="_blank">Instalacion de Redes</a></li>
-                        <li><a href="./configRedes.html" target="_blank">Configuracion de Redes</a></li>
-                        <li><a href="./instDatacenter.html" target="_blank">Instalacion de DataCenter</a></li>
-                        <li><a href="./instFibraOpt.html" target="_blank">Instalacion de FibraOptica</a></li>
+        <nav>
+            <ul class="nav">
+                <li><a href="#">Menu</a></li>
+                <li>
+                    <a href="#">Servicios</a>
+                    <ul class="submenu">
+                        <li><a href="./instRedes.html" target="_blank">Instalación de Redes</a></li>
+                        <li><a href="./configRedes.html" target="_blank">Configuración de Redes</a></li>
+                        <li><a href="./instDatacenter.html" target="_blank">Instalación de DataCenter</a></li>
+                        <li><a href="./instFibraOpt.html" target="_blank">Instalación de Fibra Óptica</a></li>
                     </ul>
                 </li>
-
                 <li><a href="./acercade.html" target="_blank">Acerca de</a></li>
-                <li><a href="./AttCliente.html" target="_blank">Atencion al Cliente</a></li>
-                
+                <li><a href="./AttCliente.html" target="_blank">Atención al Cliente</a></li>
             </ul>
-        </div>
-    </div>
-    
-
+        </nav>
     </header>
     <main>
-        <div class="jajaja">
-            <h1>¡Conéctate al futuro con el nuevo Router X-Star, impulsado por Starlink! 🚀 </h1>
-            <h2>🌎 Internet donde lo necesites, cuando lo necesites. Con Router X-Star, la red nunca se detiene. </h2>
+        <div>
+            <h1>¡Conéctate al futuro con el nuevo Router X-Star, impulsado por Starlink! 🚀</h1>
+            <h2>🌎 Internet donde lo necesites, cuando lo necesites. Con Router X-Star, la red nunca se detiene.</h2>
             <div class="X-Star">
-                <marquee behavior="slide" loop="true">
-
-                    <img src="./assets/imagenes/Router Starlink.jfif" alt="X-Star" width="250" height="250">
-                    <img src="./assets/imagenes/starlink2.jfif" alt="X-Star" width="250" height="250">
-                    <img src="./assets/imagenes/starlink4.jfif" alt="X-Star" width="250" height="250">
-                    <img src="./assets/imagenes/starlink3.jfif" alt="X-Star" width="250" height="250">
-                    <img src="./assets/imagenes/starlink7.jfif" alt="X-Star" width="250" height="250">
-                    <img src="./assets/imagenes/starlink8.jfif" alt="X-Star" width="250" height="250">
-                    <img src="./assets/imagenes/starlink9.jfif" alt="X-Star" width="250" height="250">
-
-
-
-
-                </marquee>
+                <img class="Routers" src="./assets/imagenes/Router Starlink.jfif" alt="X-Star">
+                <img class="Routers" src="./assets/imagenes/starlink2.jfif" alt="X-Star">
+                <img class="Routers" src="./assets/imagenes/starlink4.jfif" alt="X-Star">
+                <img class="Routers" src="./assets/imagenes/starlink3.jfif" alt="X-Star">
+                <img class="Routers" src="./assets/imagenes/starlink7.jfif" alt="X-Star">
+                <img class="Routers" src="./assets/imagenes/starlink8.jfif" alt="X-Star">
+                <img class="Routers" src="./assets/imagenes/starlink9.jfif" alt="X-Star">
             </div>
-            <ul class="Router">
-                <li><button class="B1"><a class="A1"
-                            href="https://www.starlink.com/ar?referral=RC-481067-34312-6&utm_source=google&utm_medium=paid&utm_campaign=sls_ar_src_ggl_brd_stk-pe&utm_content=sls_ar_src_ggl_brd_stk-pe_res_hds_v4s_txt_es-419_egn0726&utm_term=starlink&utm_id="
-                            target="_blank">Compra Aqui!</a></button>
-                </li>
-                <li><button class="B2">Ver mas</button></li>
-            </ul>
+            <div class="Router">
+                <button class="B1"><a class="A1"
+                        href="https://www.starlink.com/ar?referral=RC-481067-34312-6&utm_source=google&utm_medium=paid&utm_campaign=sls_ar_src_ggl_brd_stk-pe&utm_content=sls_ar_src_ggl_brd_stk-pe_res_hds_v4s_txt_es-419_egn0726&utm_term=starlink&utm_id="
+                        target="_blank">Compra Aquí!</a></button>
+                <button class="B2">Ver más</button>
+            </div>
         </div>
-
-    
-
-
-
-        <video src="./assets/imagenes/Red.mp4" autoplay="true" muted="true" loop="true" poster=""></video>
-
-
+        <video src="./assets/imagenes/Red.mp4" autoplay muted loop></video>
     </main>
     <footer>
-        <div class="Container">
-
-
-
+        <div class="Container_Logos">
             <div class="Power">
-
                 <p>Powered by</p>
+                <img src="./assets/imagenes/Starlink_(satellite_constellation)-Logo.wine.png" alt="starlink" width="150"
+                    height="100">
             </div>
-            <div class="Starlink">
-                <img src="./assets/imagenes/Starlink_(satellite_constellation)-Logo.wine.png"
-                        alt="starlink" width="150" height="100">
-            </div>
-            <div>
+            <ul class="Nombres">
+                <div>
 
-                <ul class="Nombres">
-                    <div class="Nombres1">
+                    <li>Emiliano Díaz</li>
+                    <li>Leandro Cabrera</li>
+                    <li>Federico Maidana</li>
+                    <li>Ariadna Alegría</li>
+                    <li>Nahiara Araneda</li>
+                    <li>Tiara Llanquileo</li>
+                </div>
+                <div>
 
-                        <li>Emiliano Diaz</li>
-                        <li>Leandro Cabrera</li>
-                        <li>Federico Maidana</li>
-                        <li>Ariadna Alegria</li>
-                        <li>Nahiara Araneda</li>
-                        <li>Tiara Llanquileo</li>
-                        <li>Constanza Gacek</li>
-                        <li>Mateo Maggi</li>
-                    </div>
-                    <div class="Nombres1">
+                    <li>Constanza Gacek</li>
+                    <li>Mateo Maggi</li>
+                    <li>Agustín Colipi</li>
+                    <li>Mateo Chaparro</li>
+                    <li>Joaquín Cerda</li>
+                    <li>Thiago Cartes</li>
 
-                        <li>Agustin Colipi</li>
-                        <li>Mateo Chaparro</li>
-                        <li>Joaquin Cerda</li>
-                        <li>Thiago Cartes</li>
-                        <li>Camila Gomez</li>
-                        <li>Mia Guerrero</li>
-                        <li>Gabriela Beccali</li>
-                    </div>
-                </ul>
-            </div>
-           
 
-           
+                    <li>Camila Gómez</li>
+                    <li>Mía Guerrero</li>
+                    <li>Gabriela Beccali</li>
+                </div>
+
+            </ul>
         </div>
         <div class="veinteventicuatro">
-
-            <p class="P">©Derechos Reservados 2024</p>
+            <p class="P">© Derechos Reservados 2024</p>
         </div>
-        <div class="Container_Logos">
-
-            <div class="IG">
-                <a href="https://www.instagram.com/atodared.cet30_?igsh=Z3ZpOXMycTBmcHR2" target="_blank"><img
-                    src="./assets/imagenes/instagram.png" alt="ig" width="30" height="30"></a>
-                </div>
-                
-                <div class="Logo_Chiquito">
-                    
-                    <div id="Menu">
-                        <a href="#Menu"> <img src="./assets/imagenes/a toda red logo transparente.png" alt="logo" width="40" height="40">
-                        </a>
-                    </div>
-                </div>
-            </div>
     </footer>
-
-
 </body>
 
 </html>

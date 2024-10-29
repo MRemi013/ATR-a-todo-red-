@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instalacion de Redes</title>
-    <link rel="stylesheet" href="/atr.html">
+    <title>Instalación de Redes</title>
     <link rel="icon" href="./assets/imagenes/a toda red logo transparente.png" type="image/x-icon">
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #1a1a1a;
+            /* Fondo más oscuro para mejor contraste */
+            overflow-x: hidden;
+            /* Evita el desbordamiento horizontal */
+        }
+
         video {
             position: fixed;
             right: 0;
@@ -16,29 +25,95 @@
             min-height: 100%;
             transform: translateX(calc((100% - 100vw) / 2));
             z-index: -2;
+            object-fit: cover;
+            /* Asegura que el video cubra el área sin deformarse */
         }
 
-        .Container {
+        .container {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            /* Para que el contenido esté encima del video */
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            /* Mejora la legibilidad del texto */
+        }
+
+        .toggle-button {
+            background-color: #00ccff46;
+            border: none;
+            color: white;
+            font-size: x-large;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .toggle-button:hover {
+            background-color: #0099cc;
+            transform: scale(1.05);
+            /* Efecto de aumento en hover */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #hiddentext {
+            background-color: #00ccff46;
+            border: 0px;
             color: white;
         }
 
+        .visible {
+            display: block;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            /* Sombra para destacar el texto */
+        }
+
+        .imagenesredes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .imagenesredes img {
+            height: 400px;
+            width: 400px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            /* Agregando efectos de hover */
+        }
+
+        .imagenesredes img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            /* Sombra en hover */
+        }
+
         footer {
-            background-color: #a3a2a28f;
-
-        }
-
-        .veinteventicuatro {
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .Container_Logos {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
+            background-color: rgba(163, 162, 162, 0.56);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .Nombres {
@@ -49,7 +124,7 @@
         .Nombres1 {
             display: flex;
             justify-content: space-around;
-            flex-direction: column;
+            
 
         }
 
@@ -62,73 +137,100 @@
         li {
             list-style: none;
         }
-        .textos{
-            background-color:#00ccff65 ;
-            color: antiquewhite;
 
-            
-            
-        }
-        .imagenesredes{
+        .veinteventicuatro {
             display: flex;
             justify-content: center;
-        }
-        
-    </style>
-</head> 
 
+        }
+
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+            /* Efecto de aumento en hover */
+        }
+
+        .copyright {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .imagenesredes img {
+                height: 300px;
+                width: 300px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                /* Ajustar tamaño del encabezado en pantallas pequeñas */
+            }
+
+            .toggle-button {
+                font-size: large;
+                /* Ajustar tamaño del botón en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
 
 <body>
-    <video src="./assets/imagenes/Red.mp4" autoplay="true" muted="true" loop="true" poster=""></video>
-    <div class="Container">
+    <video src="./assets/imagenes/Red.mp4" autoplay muted loop></video>
+    <div class="container">
+        <h1>
+            <button id="toggleButton" class="toggle-button">Instalación de Redes -></button>
+        </h1>
+        <div id="hiddentext" class="hidden">
+            <p>
+                Instalamos redes evaluando necesidades, diseñando soluciones personalizadas, montando infraestructura,
+                configurando equipos y realizando pruebas. También brindamos capacitación y soporte para asegurar un
+                funcionamiento óptimo, garantizando calidad y satisfacción.
+                <br> En nuestra empresa ofrecemos soluciones de instalación de redes diseñadas para asegurar un
+                rendimiento impecable desde el primer día. Nos enfocamos en brindar servicios integrales,
+                adaptándonos a las necesidades específicas de cada proyecto, y garantizando calidad y
+                satisfacción en cada etapa del proceso.
+                <br> 🔌 Análisis de Necesidades: Identificamos los requerimientos técnicos y operativos para ofrecerte
+                la infraestructura de red ideal, optimizada para el crecimiento y la estabilidad.
+                <br> 🛠️ Diseño Personalizado: Creamos un plan a medida para tu red, tomando en cuenta tus objetivos y
+                presupuesto, con opciones escalables que se ajusten a cambios futuros.
+                <br> 🏗️ Montaje e Infraestructura: Instalamos el cableado estructurado, routers, switches y equipos
+                necesarios, asegurando una configuración precisa para evitar interrupciones y mejorar el rendimiento.
+                <br> 🚀 Garantía de Calidad y Satisfacción: Nos comprometemos a ofrecer soluciones confiables, duraderas
+                y seguras, asegurando la plena satisfacción de nuestros clientes.
+                <br> 🔒 Seguridad de Redes: Hoy en día, la seguridad es primordial. Durante la instalación,
+                implementamos protocolos de seguridad avanzados que incluyen firewalls, control de acceso, encriptación
+                y segmentación de redes para proteger tus datos y garantizar un entorno seguro contra amenazas externas
+                e internas.
+                <br> 🎓 Capacitación para tu Equipo: Una red instalada correctamente debe ser bien administrada. Por
+                eso, ofrecemos capacitación a tu personal para que sepan cómo gestionar y solucionar posibles
+                inconvenientes menores, asegurando que tu equipo esté preparado para sacar el máximo provecho de la
+                infraestructura.
+            </p>
+        </div>
 
-
-        <section class="Instalacion de Redes">
-
-            <div id="Instalacion de Redes">
-                <div class="InstRedes">
-                    <div class="textos">
-
-                        <h1>Instalacion de Redes</h1>
-                        <p>Instalamos redes evaluando necesidades, diseñando soluciones personalizadas, montando
-                            infraestructura, configurando equipos y realizando pruebas. También brindamos capacitación y
-                            soporte para asegurar un funcionamiento óptimo, garantizando calidad y satisfacción. <br>En
-                            nuestra empresa ofrecemos soluciones de instalación de redes diseñadas para asegurar un
-                            rendimiento impecable desde el primer día. Nos enfocamos en brindar servicios integrales,
-                            adaptándonos a las necesidades específicas de cada proyecto, y garantizando calidad y
-                            satisfacción en cada etapa del proceso. <br> 🔌 Análisis de Necesidades:
-                            Identificamos los requerimientos técnicos y operativos para ofrecerte la infraestructura de
-                            red ideal, optimizada para el crecimiento y la estabilidad. <br>🛠️ Diseño Personalizado:
-                            Creamos un plan a medida para tu red, tomando en cuenta tus objetivos y presupuesto, con
-                            opciones escalables que se ajusten a cambios futuros. <br> 🏗️ Montaje e Infraestructura:
-                            Instalamos el cableado estructurado, routers, switches y equipos necesarios, asegurando una
-                            configuración precisa para evitar interrupciones y mejorar el rendimiento. <br> 🚀 Garantía
-                            de Calidad y Satisfacción:
-                            Nos comprometemos a ofrecer soluciones confiables, duraderas y seguras, asegurando la plena
-                            satisfacción de nuestros clientes. <br> 🔒 Seguridad de Redes:
-                            Hoy en día, la seguridad es primordial. Durante la instalación, implementamos protocolos de
-                            seguridad avanzados que incluyen firewalls, control de acceso, encriptación y segmentación
-                            de redes para proteger tus datos y garantizar un entorno seguro contra amenazas externas e
-                            internas. <br> 🎓 Capacitación para tu Equipo:
-                            Una red instalada correctamente debe ser bien administrada. Por eso, ofrecemos capacitación
-                            a tu personal para que sepan cómo gestionar y solucionar posibles inconvenientes menores,
-                            asegurando que tu equipo esté preparado para sacar el máximo provecho de la infraestructura.
-                            
-
-                        </p>
-                    </div>
-
-                    <div class="imagenesredes">
-
-                        <img src="./assets/Instalacion de redes/red1.jpeg" alt="red" height="400" width="400">
-                        <img src="./assets/Instalacion de redes/red2.jpeg" alt="red" height="400" width="400">
-                    </div>
-                </div>
-
-
-            </div>
-        </section>
+        <div class="imagenesredes">
+            <img src="./assets/Instalacion de redes/red1.jpeg" alt="Instalación de Redes 1">
+            <img src="./assets/Instalacion de redes/red2.jpeg" alt="Instalación de Redes 2">
+        </div>
     </div>
+
+    <script>
+        // Seleccionar el botón y el texto oculto
+        const toggleButton = document.getElementById("toggleButton");
+        const hiddenText = document.getElementById("hiddentext");
+
+        // Añadir un evento de clic al botón
+        toggleButton.addEventListener("click", function () {
+            hiddenText.classList.toggle("hidden");
+            hiddenText.classList.toggle("visible");
+        });
+    </script>
 
     <footer>
         <div class="Container_Footer">
@@ -194,8 +296,5 @@
             </div>
         </div>
     </footer>
-
-
-</body>
 
 </html>

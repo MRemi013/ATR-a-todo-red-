@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuracion de Redes</title>
+    <title>Configuración de Redes</title>
     <link rel="icon" href="./assets/imagenes/a toda red logo transparente.png" type="image/x-icon">
-
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #1a1a1a; /* Fondo oscuro */
+            overflow-x: hidden; /* Evita el desbordamiento horizontal */
+        }
+
         video {
             position: fixed;
             right: 0;
@@ -16,29 +23,89 @@
             min-height: 100%;
             transform: translateX(calc((100% - 100vw) / 2));
             z-index: -2;
+            object-fit: cover; /* Asegura que el video cubra el área sin deformarse */
         }
 
-        .Container {
+        .container {
             display: flex;
-            color: white;
-        }
-
-        footer {
-            background-color: #a3a2a28f;
-
-        }
-
-        .veinteventicuatro {
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .Container_Logos {
-            display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            padding: 20px;
+            position: relative; /* Para que el contenido esté encima del video */
+            z-index: 1;
+        }
 
+        h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Mejora la legibilidad */
+        }
+
+        #toggleButton {
+            background-color: #00ccff46;
+            border: none;
+            color: white;
+            font-size: x-large;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #toggleButton:hover {
+            background-color: #0099cc; /* Color más oscuro al pasar el mouse */
+            transform: scale(1.05); /* Efecto de aumento en hover */
+        }
+
+        .hidden {
+            display: none; /* Oculta el texto por defecto */
+        }
+
+        .visible {
+            display: block; /* Muestra el texto cuando es visible */
+            margin-top: 10px; /* Espaciado superior */
+            color: #333; /* Color del texto */
+            background-color: #f9f9f9; /* Color de fondo */
+            padding: 15px; /* Espaciado interno */
+            border: 1px solid #ccc; /* Borde alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar el texto */
+        }
+
+        .imagenesredes {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .imagenesredes img {
+            height: 400px;
+            width: 400px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s; /* Efectos de hover */
+        }
+
+        .imagenesredes img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra en hover */
+        }
+
+        .hidden {
+            display: none;
+        }
+        #hiddentext{
+            background-color: #00ccff46;
+    border: 0px;
+    color: white;
+        }
+        footer {
+            background-color: rgba(163, 162, 162, 0.56);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .Nombres {
@@ -49,7 +116,7 @@
         .Nombres1 {
             display: flex;
             justify-content: space-around;
-            flex-direction: column;
+            
 
         }
 
@@ -62,71 +129,103 @@
         li {
             list-style: none;
         }
-        .textos{
-            background-color:#00ccff65 ;
-            color: antiquewhite;
-            
-            
-        }
-        .imagenesredes{
+
+        .veinteventicuatro {
             display: flex;
             justify-content: center;
+
+        }
+
+       
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1); /* Efecto de aumento en hover */
+        }
+
+        .copyright {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .imagenesredes img {
+                height: 300px;
+                width: 300px; /* Ajustar tamaño de imagen en pantallas pequeñas */
+            }
+
+            h1 {
+                font-size: 1.5rem; /* Ajustar tamaño del encabezado en pantallas pequeñas */
+            }
+
+            #toggleButton {
+                font-size: large; /* Ajustar tamaño del botón en pantallas pequeñas */
+            }
         }
     </style>
 </head>
 
 <body>
-    <video src="./assets/imagenes/Red.mp4" autoplay="true" muted="true" loop="true" poster=""></video>
-    <div class="Container">
-
+    <video src="./assets/imagenes/Red.mp4" autoplay muted loop></video>
+    <div class="container">
         <section class="Configuraciones de Redes">
-            <div id="Configuracion de Redes">
-                <div class="InstRedes">
-
-                    <div class="textos">
-
-                        <h1>Configuracion de Redes</h1>
-                        <p>Configuración y optimización de redes, asegurando un funcionamiento fluido y seguro. <br>
-                            La configuración de redes implica asignar IPs, definir la puerta de enlace, configurar DNS,
-                            establecer rutas, asegurar la red con firewalls y probar la conectividad. Ofrecemos
-                            servicios completos de configuración y optimización de redes, garantizando un funcionamiento
-                            fluido, seguro y eficiente. Nos aseguramos de que cada componente esté correctamente
-                            integrado para mantener la conectividad estable y proteger tu red ante posibles amenazas.
-                            <br> 🔢 Asignación de Direcciones IP:
-                            Organizamos y asignamos direcciones IP a los dispositivos de tu red, asegurando una
-                            estructura ordenada y eficiente. <br>🌐 Definición de Puerta de Enlace y DNS:
-                            Configuramos las puertas de enlace y servidores DNS para asegurar una conexión rápida y
-                            estable hacia Internet. <br> 🛡️ Seguridad con Firewalls y Control de Acceso:
-                            Implementamos firewalls y reglas de seguridad para proteger tu red contra accesos no
-                            autorizados y ciberamenazas. <br> 🔍 Pruebas de Conectividad y Optimización:
-                            Realizamos pruebas exhaustivas para detectar posibles fallos y optimizamos cada componente
-                            para asegurar el mejor rendimiento posible. <br> 🛡️ Configuración de Seguridad: Firewalls y
-                            VPN:
-                            La seguridad es uno de los pilares de la configuración de redes. Implementamos firewalls
-                            robustos que controlan y filtran el tráfico entre tu red interna y el exterior, protegiendo
-                            tus datos contra amenazas. También configuramos redes privadas virtuales (VPN), lo que
-                            permite a los empleados acceder de manera segura a la red corporativa desde ubicaciones
-                            remotas, sin comprometer la integridad o seguridad de la información. <br> 🌐 Configuración
-                            de DNS y Puertas de Enlace:
-                            Configuramos servidores DNS para garantizar la rápida resolución de nombres de dominio y
-                            mejorar la velocidad de acceso a servicios web. Definimos correctamente las puertas de
-                            enlace (gateways) que permiten a tu red interna comunicarse con el exterior, garantizando
-                            que el tráfico de datos fluya sin interrupciones. Esto también incluye la implementación de
-                            rutas estáticas y dinámicas para optimizar la conexión entre diferentes subredes o redes
-                            externas.
-                        </p>
-
-                    </div>
-                    <div class="imagenesredes">
-
-                        <img src="./assets/Instalacion de redes/confi1.jpeg" alt="red conf" height="400" width="400">
-                        <img src="./assets/Instalacion de redes/confi2.jpeg" alt="red conf" height="400" width="400">
-                    </div>
-
+            <h1>
+                <button id="toggleButton">
+                    Configuración de Redes ->
+                </button>
+            </h1>
+            <div id="hiddentext" class="hidden">
+                <p>
+                    La configuración y optimización de redes aseguran un funcionamiento fluido y seguro.
+                    <br> La configuración de redes implica asignar IPs, definir la puerta de enlace, configurar DNS,
+                    establecer rutas, asegurar la red con firewalls y probar la conectividad. Ofrecemos
+                    servicios completos de configuración y optimización de redes, garantizando un funcionamiento
+                    fluido, seguro y eficiente. Nos aseguramos de que cada componente esté correctamente
+                    integrado para mantener la conectividad estable y proteger tu red ante posibles amenazas.
+                    <br> 🔢 Asignación de Direcciones IP: Organizamos y asignamos direcciones IP a los dispositivos
+                    de tu red, asegurando una estructura ordenada y eficiente.
+                    <br> 🌐 Definición de Puerta de Enlace y DNS: Configuramos las puertas de enlace y servidores
+                    DNS para asegurar una conexión rápida y estable hacia Internet.
+                    <br> 🛡️ Seguridad con Firewalls y Control de Acceso: Implementamos firewalls y reglas de
+                    seguridad para proteger tu red contra accesos no autorizados y ciberamenazas.
+                    <br> 🔍 Pruebas de Conectividad y Optimización: Realizamos pruebas exhaustivas para detectar
+                    posibles fallos y optimizamos cada componente para asegurar el mejor rendimiento posible.
+                    <br> 🛡️ Configuración de Seguridad: Firewalls y VPN: La seguridad es uno de los pilares de
+                    la configuración de redes. Implementamos firewalls robustos que controlan y filtran el tráfico
+                    entre tu red interna y el exterior, protegiendo tus datos contra amenazas. También configuramos
+                    redes privadas virtuales (VPN), lo que permite a los empleados acceder de manera segura a la
+                    red corporativa desde ubicaciones remotas, sin comprometer la integridad o seguridad de la
+                    información.
+                    <br> 🌐 Configuración de DNS y Puertas de Enlace: Configuramos servidores DNS para garantizar
+                    la rápida resolución de nombres de dominio y mejorar la velocidad de acceso a servicios web.
+                    Definimos correctamente las puertas de enlace (gateways) que permiten a tu red interna
+                    comunicarse con el exterior, garantizando que el tráfico de datos fluya sin interrupciones.
+                    Esto también incluye la implementación de rutas estáticas y dinámicas para optimizar la
+                    conexión entre diferentes subredes o redes externas.
+                </p>
+            </div>
+            <div class="imagenesredes">
+                <img src="./assets/Instalacion de redes/confi1.jpeg" alt="Configuración de Redes 1">
+                <img src="./assets/Instalacion de redes/confi2.jpeg" alt="Configuración de Redes 2">
+            </div>
         </section>
-
     </div>
-</body>
+
+    <script>
+        const toggleButton = document.getElementById("toggleButton");
+        const hiddenText = document.getElementById("hiddentext");
+
+        toggleButton.addEventListener("click", function () {
+            hiddenText.classList.toggle("hidden");
+            hiddenText.classList.toggle("visible");
+        });
+    </script>
+
 <footer>
     <div class="Container_Footer">
 

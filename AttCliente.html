@@ -3,88 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atencion al Cliente</title>
+    <title>Atención al Cliente</title>
     <link rel="icon" href="./assets/imagenes/a toda red logo transparente.png" type="image/x-icon">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+        }
         video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 105%;
-            min-height: 100%;
-            transform: translateX(calc((100% - 100vw) / 2));
-            z-index: -2;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 105%;
+    min-height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+    z-index: -2;
+  }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 20px 0;
         }
 
-        .Container {
+        h2 {
+            color: #00ccff;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        form {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 51, 102, 0.8);
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #00ccff;
             color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0099cc;
         }
 
         footer {
-            background-color: #a3a2a28f;
+            background-color: rgba(163, 162, 162, 0.5);
+            padding: 20px 0;
+            text-align: center;
+        }
 
+        .Container_Logos img {
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .Container_Logos img:hover {
+            transform: scale(1.1); /* Efecto de hover */
         }
 
         .veinteventicuatro {
-            display: flex;
-            justify-content: center;
-
+            margin-top: 10px;
         }
 
-        .Container_Logos {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Ajuste para móviles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
 
-        }
-
-        .Nombres {
-            display: flex;
-            justify-content: start;
-        }
-
-        .Nombres1 {
-            display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-
-        }
-
-        .Container_Footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        li {
-            list-style: none;
-        }
-        .textos{
-            background-color:#00ccff65 ;
-            color: antiquewhite;
-            
-            
-        }
-        .imagenesredes{
-            display: flex;
-            justify-content: center;
-        }
-        form{
-            color: antiquewhite;
-            display: block;
-           gap: 10px;
-        }
-        h1{
-            color: antiquewhite;
+            form {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
     <main>
-        <video src="./assets/imagenes/Red.mp4" autoplay="true" muted="true" loop="true" poster=""></video>
-         <h1>¡Contrate Nuestro Servicio!</h1>
+        <video src="./assets/imagenes/Red.mp4" autoplay muted loop></video>
+        <h1>¡Contrate Nuestro Servicio!</h1>
         <form action="">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" required>
@@ -92,23 +115,22 @@
             <input type="text" id="apellido" required>
             <div>
                 <label for="email">Email:</label>
-                <input type="email"name="CorreoElectronico" id="email" required>
+                <input type="email" name="CorreoElectronico" id="email" required>
             </div>
             <div>
-                <label for="tel">Numero de Telefono</label>
+                <label for="tel">Número de Teléfono:</label>
                 <input type="tel" name="tel" id="tel" required>
             </div>
             <div>
                 <label for="DNI">DNI:</label>
-                <input type="number" name="DNI" id="DNI" max="" min="0" required>
+                <input type="number" name="DNI" id="DNI" min="0" required>
             </div>
             <div>
-                <label for="Provincia">Provincia</label>
+                <label for="Provincia">Provincia:</label>
                 <select name="Provincia" required>
-
                     <option value="BSAS">Buenos Aires</option>
                     <option value="CABA">C.A.B.A</option>
-                    <option value="TM">Tucuman</option>
+                    <option value="TM">Tucumán</option>
                     <option value="Catamarca">Catamarca</option>
                     <option value="Chaco">Chaco</option>
                     <option value="Chubut">Chubut</option>
@@ -135,78 +157,30 @@
             <div>
                 <input type="submit" value="Enviar">
             </div>
-
-
         </form>
         <form action="">
-            <h2>Opine de Nuestro servicio</h2>
+            <h2>Opine de Nuestro Servicio</h2>
             <textarea name="opinion" id="opinion" cols="30" rows="10"></textarea>
         </form>
     </main>
     <footer>
-        <div class="Container_Footer">
-
-
-
-            <div class="Power">
-
-                <p>Powered by</p>
-            </div>
-            <div class="Starlink">
-                <img src="./assets/imagenes/Starlink_(satellite_constellation)-Logo.wine.png" alt="starlink" width="150"
-                    height="100">
-            </div>
-            <div>
-
-                <ul class="Nombres">
-                    <div class="Nombres1">
-
-                        <li>Emiliano Diaz</li>
-                        <li>Leandro Cabrera</li>
-                        <li>Federico Maidana</li>
-                        <li>Ariadna Alegria</li>
-                        <li>Nahiara Araneda</li>
-                        <li>Tiara Llanquileo</li>
-                        <li>Constanza Gacek</li>
-                        <li>Mateo Maggi</li>
-                    </div>
-                    <div class="Nombres1">
-
-                        <li>Agustin Colipi</li>
-                        <li>Mateo Chaparro</li>
-                        <li>Joaquin Cerda</li>
-                        <li>Thiago Cartes</li>
-                        <li>Camila Gomez</li>
-                        <li>Mia Guerrero</li>
-                        <li>Gabriela Beccali</li>
-                    </div>
-                </ul>
-            </div>
-
-
-
-        </div>
-        <div class="veinteventicuatro">
-
-            <p class="P">©Derechos Reservados 2024</p>
-        </div>
         <div class="Container_Logos">
-
             <div class="IG">
-                <a href="https://www.instagram.com/atodared.cet30_?igsh=Z3ZpOXMycTBmcHR2" target="_blank"><img
-                        src="./assets/imagenes/instagram.png" alt="ig" width="30" height="30"></a>
+                <a href="https://www.instagram.com/atodared.cet30_?igsh=Z3ZpOXMycTBmcHR2" target="_blank">
+                    <img src="./assets/imagenes/instagram.png" alt="ig" width="30" height="30">
+                </a>
             </div>
-
             <div class="Logo_Chiquito">
-
                 <div id="Menu">
-                    <a href="#Menu"> <img src="./assets/imagenes/a toda red logo transparente.png" alt="logo" width="40"
-                            height="40">
+                    <a href="#Menu">
+                        <img src="./assets/imagenes/a toda red logo transparente.png" alt="logo" width="40" height="40">
                     </a>
                 </div>
             </div>
         </div>
+        <div class="veinteventicuatro">
+            <p class="P">©Derechos Reservados 2024</p>
+        </div>
     </footer>
-    
 </body>
 </html>
